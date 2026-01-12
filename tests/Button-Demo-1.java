@@ -8,7 +8,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import pageobjects.testtrack_org_PO;
 import pageobjects.testtrack_org_buttondemo_PO;
-import tmpksgktlxj.pageobjects.testtrack_org_buttondemo_PO as TmpTesttrackOrgButtondemoPO; // Note: Java does not support alias imports; adjust package usage as needed
 
 public class Button_Demo_1 {
 
@@ -28,6 +27,10 @@ public class Button_Demo_1 {
 
         tmpksgktlxj.pageobjects.testtrack_org_buttondemo_PO secondaryButtonPO = new tmpksgktlxj.pageobjects.testtrack_org_buttondemo_PO(driver);
         secondaryButtonPO.clickSecondaryButton();
+
+        // Check if total activations is 2
+        testtrack_org_buttondemo_PO activationsCheckPO = new testtrack_org_buttondemo_PO(driver);
+        activationsCheckPO.assertTextEquals("2");
     }
 
     @AfterTest
