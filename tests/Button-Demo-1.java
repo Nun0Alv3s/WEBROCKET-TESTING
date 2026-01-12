@@ -24,6 +24,8 @@ public class Button_Demo_1 {
 
         testtrack_org_buttondemo_PO buttonDemoPO = new testtrack_org_buttondemo_PO(driver);
         buttonDemoPO.clickPrimaryButton();
+
+        buttonDemoPO.clickSecondaryButton();
     }
 
     @AfterTest
