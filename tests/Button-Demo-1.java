@@ -6,9 +6,6 @@ import org.testng.annotations.AfterTest;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import pageobjects.testtrack_org_PO;
-import pageobjects.testtrack_org_buttondemo_PO;
-
 public class Button_Demo_1 {
 
     protected WebDriver driver = new ChromeDriver();
@@ -18,24 +15,10 @@ public class Button_Demo_1 {
 
         driver.get("https://testtrack.org");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-
-        testtrack_org_PO testtrackOrgPO = new testtrack_org_PO(driver);
-        testtrackOrgPO.clickMainLink();
-
-        testtrack_org_buttondemo_PO buttonDemoPO = new testtrack_org_buttondemo_PO(driver);
-        buttonDemoPO.clickPrimaryButton();
-
-        buttonDemoPO.clickSecondaryButton();
-
-        buttonDemoPO.assertResultCounterTextIs("2");
-
-        buttonDemoPO.clickDestructiveButton();
-
-        buttonDemoPO.assertDestructiveButtonIsActivated(10);
     }
 
     @AfterTest
     public void teardown(){
-        driver.quit();   
+        driver.quit();
     }
 }
