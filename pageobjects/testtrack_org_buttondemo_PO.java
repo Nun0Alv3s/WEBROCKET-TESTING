@@ -20,6 +20,9 @@ public class testtrack_org_buttondemo_PO {
     @FindBy(xpath = "//span[@id='resultCounter']")
     protected WebElement resultCounterLabel;
 
+    @FindBy(id = "destructive-button")
+    protected WebElement destructiveButton;
+
     public testtrack_org_buttondemo_PO(WebDriver pDriver) {
         driver = pDriver;
         PageFactory.initElements(driver, this);
@@ -48,5 +51,12 @@ public class testtrack_org_buttondemo_PO {
     public void assertResultCounterTextIs(String expectedText) {
         String actualText = resultCounterLabel.getText();
         Assert.assertEquals(actualText.trim(), expectedText, "Result counter text did not match the expected value.");
+    }
+
+    /**
+     * Performs a left mouse button click on the destructive button.
+     */
+    public void clickDestructiveButton() {
+        destructiveButton.click();
     }
 }
