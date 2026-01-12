@@ -87,6 +87,20 @@ public class testtrack_org_buttondemo_PO {
     }
 
     /**
+     * Asserts that the destructive button is visible and enabled (activated).
+     * Uses an explicit wait for the button to become visible.
+     *
+     * @param timeoutInSeconds maximum time to wait for the button to become visible (e.g., 10)
+     */
+    public void assertDestructiveButtonIsActivated(long timeoutInSeconds) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
+        wait.until(ExpectedConditions.visibilityOf(destructiveButton));
+        if (!destructiveButton.isEnabled()) {
+            throw new AssertionError("Destructive button is visible but not activated (enabled).");
+        }
+    }
+
+    /**
      * Asserts that the text of the element equals the expected value.
      *
      * @param expectedText the expected text to be present (e.g., "2")
