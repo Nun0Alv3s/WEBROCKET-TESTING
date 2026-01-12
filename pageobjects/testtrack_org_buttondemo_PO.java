@@ -27,6 +27,9 @@ public class testtrack_org_buttondemo_PO {
     @FindBy(id = "destructive-button")
     protected WebElement destructiveButton;
 
+    @FindBy(xpath = "//*[normalize-space(text())='2']")
+    protected WebElement labelTwo;
+
     public testtrack_org_buttondemo_PO(WebDriver pDriver) {
         driver = pDriver;
         PageFactory.initElements(driver, this);
@@ -81,5 +84,15 @@ public class testtrack_org_buttondemo_PO {
         if (!destructiveButton.isEnabled()) {
             throw new AssertionError("Destructive button is visible but not activated (not enabled).");
         }
+    }
+
+    /**
+     * Asserts that the text of the element equals the expected value.
+     *
+     * @param expectedText the expected text to be present (e.g., "2")
+     */
+    public void assertTextEquals(String expectedText) {
+        String actualText = labelTwo.getText();
+        Assert.assertEquals(actualText, expectedText, "Element text does not match the expected value.");
     }
 }
