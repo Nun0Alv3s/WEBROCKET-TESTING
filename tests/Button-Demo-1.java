@@ -35,6 +35,10 @@ public class Button_Demo_1 {
         // Click the destructive button
         testtrack_org_buttondemo_PO destructiveButtonPO = new testtrack_org_buttondemo_PO(driver);
         destructiveButtonPO.clickDestructiveButton();
+
+        // Check if the destructive button is activated
+        testtrack_org_buttondemo_PO destructiveButtonActivatedPO = new testtrack_org_buttondemo_PO(driver);
+        destructiveButtonActivatedPO.assertDestructiveButtonIsActivated(10L);
     }
 
     @AfterTest
