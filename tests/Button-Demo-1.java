@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import pageobjects.testtrack_org_PO;
+import pageobjects.testtrack_org_buttondemo_PO;
 
 public class Button_Demo_1 {
 
@@ -20,6 +21,9 @@ public class Button_Demo_1 {
 
         testtrack_org_PO testtrackOrgPO = new testtrack_org_PO(driver);
         testtrackOrgPO.clickPrimaryLink();
+
+        testtrack_org_buttondemo_PO testtrackOrgButtondemoPO = new testtrack_org_buttondemo_PO(driver);
+        testtrackOrgButtondemoPO.clickPrimaryButton();
     }
 
     @AfterTest
