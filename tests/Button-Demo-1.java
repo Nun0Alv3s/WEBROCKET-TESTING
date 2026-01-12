@@ -30,6 +30,8 @@ public class Button_Demo_1 {
         buttonDemoPO.assertResultCounterTextIs("2");
 
         buttonDemoPO.clickDestructiveButton();
+
+        buttonDemoPO.assertDestructiveButtonIsActivated(10);
     }
 
     @AfterTest
