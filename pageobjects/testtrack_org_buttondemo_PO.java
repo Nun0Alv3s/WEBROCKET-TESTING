@@ -4,7 +4,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+
+import java.time.Duration;
 
 public class testtrack_org_buttondemo_PO {
     protected WebDriver driver;
@@ -58,5 +62,24 @@ public class testtrack_org_buttondemo_PO {
      */
     public void clickDestructiveButton() {
         destructiveButton.click();
+    }
+
+    /**
+     * Asserts that the destructive button is visible and enabled (activated).
+     *
+     * @param timeoutInSeconds maximum time in seconds to wait for the button to become visible (e.g., 10)
+     * @throws AssertionError if the button is not visible or not enabled within the timeout
+     */
+    public void assertDestructiveButtonIsActivated(int timeoutInSeconds) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
+        wait.until(ExpectedConditions.visibilityOf(destructiveButton));
+
+        if (!destructiveButton.isDisplayed()) {
+            throw new AssertionError("Destructive button is not visible.");
+        }
+
+        if (!destructiveButton.isEnabled()) {
+            throw new AssertionError("Destructive button is visible but not activated (not enabled).");
+        }
     }
 }
