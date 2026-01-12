@@ -31,6 +31,10 @@ public class Button_Demo_1 {
         // Check if total activations is 2
         testtrack_org_buttondemo_PO activationsCheckPO = new testtrack_org_buttondemo_PO(driver);
         activationsCheckPO.assertTextEquals("2");
+
+        // Click the destructive button
+        testtrack_org_buttondemo_PO destructiveButtonPO = new testtrack_org_buttondemo_PO(driver);
+        destructiveButtonPO.clickDestructiveButton();
     }
 
     @AfterTest
