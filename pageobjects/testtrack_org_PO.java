@@ -12,6 +12,9 @@ public class testtrack_org_PO {
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/div[2]/div[2]/a[1]")
     protected WebElement mainLink;
 
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/div[2]/div[2]/a[1]")
+    protected WebElement primaryLink;
+
     public testtrack_org_PO(WebDriver pDriver) {
         driver = pDriver;
         PageFactory.initElements(driver, this);
@@ -23,5 +26,12 @@ public class testtrack_org_PO {
      */
     public void clickMainLink() {
         mainLink.click();
+    }
+
+    /**
+     * Performs a left mouse button click on the primary link element.
+     */
+    public void clickPrimaryLink() {
+        primaryLink.click();
     }
 }
