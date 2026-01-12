@@ -11,14 +11,14 @@ public class Button_Demo_1 {
     protected WebDriver driver = new ChromeDriver();
 
     @Test
-    public void Button_Demo_1_test() {
-        // TODO: Add test steps here
+    public void Button_Demo_1_test(){
+
         driver.get("https://testtrack.org");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
     }
 
     @AfterTest
-    public void teardown() {
+    public void teardown(){
         if (driver != null) {
             driver.quit();
         }
