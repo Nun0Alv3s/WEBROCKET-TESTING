@@ -12,6 +12,9 @@ public class testtrack_org_buttondemo_PO {
     @FindBy(id = "primary-button")
     protected WebElement primaryButton;
 
+    @FindBy(id = "secondary-button")
+    protected WebElement secondaryButton;
+
     public testtrack_org_buttondemo_PO(WebDriver pDriver) {
         driver = pDriver;
         PageFactory.initElements(driver, this);
@@ -23,5 +26,12 @@ public class testtrack_org_buttondemo_PO {
      */
     public void clickPrimaryButton() {
         primaryButton.click();
+    }
+
+    /**
+     * Performs a left mouse button click on the secondary button.
+     */
+    public void clickSecondaryButton() {
+        secondaryButton.click();
     }
 }
