@@ -19,8 +19,6 @@ public class Button_Demo_1 {
 
     @AfterTest
     public void teardown(){
-        if (driver != null) {
-            driver.quit();
-        }
+        driver.quit();   
     }
 }
