@@ -28,6 +28,8 @@ public class Button_Demo_1 {
         buttonDemoPO.clickSecondaryButton();
 
         buttonDemoPO.assertResultCounterTextIs("2");
+
+        buttonDemoPO.clickDestructiveButton();
     }
 
     @AfterTest
