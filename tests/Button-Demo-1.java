@@ -26,6 +26,8 @@ public class Button_Demo_1 {
         buttonDemoPO.clickPrimaryButton();
 
         buttonDemoPO.clickSecondaryButton();
+
+        buttonDemoPO.assertResultCounterTextIs("2");
     }
 
     @AfterTest
